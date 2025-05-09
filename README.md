@@ -1,54 +1,49 @@
-# React + TypeScript + Vite
+# MDM POC — React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a **proof of concept (POC)** React application for Master Data Management (MDM).  
+It demonstrates a modular front-end with **mocked APIs**, **mock login**, and **unit tests**, simulating a production-ready setup.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- **React + TypeScript**
+- **Mock APIs** for:
+  - Currencies
+  - Locations
+  - Languages
+- 📄 Based on provided `openapi.yml` structure
+- **Mock login** simulates Okta using the same config format
+- **Unit testing** with [Vitest](https://vitest.dev/) + [Testing Library](https://testing-library.com/)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🔐 Authentication
+
+This app simulates authentication with **mock users** based on a real-world OIDC/OAuth setup:
+
+- Uses `oidc-client-ts`
+- Username `admin` is given `admin` role
+- Other usernames default to `viewer`
+- No real network calls are made — the flow and behavior mimic Okta using local mocks
+
+
+## How to Start
+```bash
+npm install
+npm run dev
+
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Testing
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Tests are written using:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+- [`Vitest`](https://vitest.dev/) — blazing-fast test runner
+- [`@testing-library/react`](https://testing-library.com/docs/react-testing-library/intro/)
+- [`jest-dom`](https://github.com/testing-library/jest-dom) for DOM assertions
+
+To run tests:
+
+```bash
+npm vitest
+
 ```
