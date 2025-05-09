@@ -1,0 +1,68 @@
+openapi: 3.0.0
+info:
+  title: Mock Entities API
+  version: 1.0.0
+
+paths:
+  /currencies:
+    get:
+      summary: Get all currencies
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/Currency" }
+
+  /locations:
+    get:
+      summary: Get all locations
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/Location" }
+
+  /languages:
+    get:
+      summary: Get all languages
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: "#/components/schemas/Language" }
+
+components:
+  schemas:
+    Currency:
+      type: object
+      required: [id, code, name]
+      properties:
+        id: { type: string }
+        code: { type: string }
+        name: { type: string }
+
+    Location:
+      type: object
+      required: [id, name, defaultCurrencyId, defaultLanguageId]
+      properties:
+        id: { type: string }
+        name: { type: string }
+        defaultCurrencyId: { type: string }
+        defaultLanguageId: { type: string }
+
+    Language:
+      type: object
+      required: [id, name, code]
+      properties:
+        id: { type: string }
+        name: { type: string }
+        code: { type: string }

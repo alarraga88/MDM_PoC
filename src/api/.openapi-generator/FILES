@@ -1,0 +1,8 @@
+apis/DefaultApi.ts
+apis/index.ts
+index.ts
+models/Currency.ts
+models/Language.ts
+models/Location.ts
+models/index.ts
+runtime.ts
