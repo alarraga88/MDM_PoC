@@ -37,9 +37,7 @@ npm run dev
 
 Tests are written using:
 
-- [`Vitest`](https://vitest.dev/) — blazing-fast test runner
-- [`@testing-library/react`](https://testing-library.com/docs/react-testing-library/intro/)
-- [`jest-dom`](https://github.com/testing-library/jest-dom) for DOM assertions
+- [`Vitest`](https://vitest.dev/)
 
 To run tests:
 
