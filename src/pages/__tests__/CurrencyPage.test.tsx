@@ -1,4 +1,3 @@
-// src/pages/__tests__/CurrencyPage.test.tsx
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { describe, vi, test, expect, beforeEach } from 'vitest';
 import CurrencyPage from '../CurrencyPage';

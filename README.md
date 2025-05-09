@@ -13,7 +13,7 @@ It demonstrates a modular front-end with **mocked APIs**, **mock login**, and **
   - Languages
 - 📄 Based on provided `openapi.yml` structure
 - **Mock login** simulates Okta using the same config format
-- **Unit testing** with [Vitest](https://vitest.dev/) + [Testing Library](https://testing-library.com/)
+- **Unit testing** with [Vitest](https://vitest.dev/)
 
 
 ## 🔐 Authentication
@@ -37,9 +37,7 @@ npm run dev
 
 Tests are written using:
 
-- [`Vitest`](https://vitest.dev/) — blazing-fast test runner
-- [`@testing-library/react`](https://testing-library.com/docs/react-testing-library/intro/)
-- [`jest-dom`](https://github.com/testing-library/jest-dom) for DOM assertions
+- [`Vitest`](https://vitest.dev/)
 
 To run tests:
 
